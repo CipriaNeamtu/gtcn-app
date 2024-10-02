@@ -11,12 +11,14 @@ import {
 } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
 import { PAGE } from "../lib/constants";
+import { FaHome } from "react-icons/fa";
+import { BiSolidCategory } from "react-icons/bi";
 
 export default function NavBar() {
 	const pathname = usePathname();
 	const navButtons = [
-		{ name: "Home", pathName: PAGE.HOME },
-		{ name: "Categories", pathName: PAGE.CATEGORIES },
+		{ name: "Home", pathName: PAGE.HOME, icon: <FaHome /> },
+		{ name: "Categories", pathName: PAGE.CATEGORIES, icon: <BiSolidCategory /> },
 	];
 
 	return (
@@ -25,10 +27,11 @@ export default function NavBar() {
 				<p className="font-bold text-inherit">GTCN-APP</p>
 			</NavbarBrand>
 			<NavbarContent className="hidden sm:flex gap-4" justify="center">
-				{navButtons.map(({name, pathName}, index) => {
+				{navButtons.map(({name, pathName, icon}, index) => {
 					return (
-						<NavbarItem key={index} isActive={pathname === pathName}>
-							<Link color={pathname === pathName ? "primary" : "foreground"} href={pathName}>
+						<NavbarItem  key={index} isActive={pathname === pathName}>
+							<Link className="flex items-center gap-1" color={pathname === pathName ? "primary" : "foreground"} href={pathName}>
+								{icon}
 								{name}
 							</Link>
 						</NavbarItem>

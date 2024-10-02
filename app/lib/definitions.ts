@@ -31,7 +31,22 @@ export type CardTypes = {
 	children?: React.ReactNode;
 }
 
+export type CategoriesPage = {
+	quizData: Quiz[];
+}
+
+export type QuizPage = {
+	quiz: Quiz;
+}
+
+export type QuestionsPage = {
+	quiz: Quiz;
+	question: QuizQuestion;
+}
+
 export type ResultsPage = {
 	questions: QuizQuestion[];
 }
+
+
 
