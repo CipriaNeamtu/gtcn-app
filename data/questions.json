@@ -2,7 +2,7 @@
 	{
 		"id": "geography",
 		"category": "Geography of Romania",
-		"image": "/geography.png",
+		"image": "/geography.jpg",
 		"type": "Quiz",
 		"questions": [
 			{
@@ -120,7 +120,7 @@
 	{
 		"id": "history",
 		"category": "History of Romania",
-		"image": "/history.png",
+		"image": "/history.jpg",
 		"type": "Quiz",
 		"questions": [
 			{
@@ -238,7 +238,7 @@
 	{
 		"id": "general",
 		"category": "General Knowledge",
-		"image": "/general.png",
+		"image": "/general.jpg",
 		"type": "Quiz",
 		"questions": [
 			{

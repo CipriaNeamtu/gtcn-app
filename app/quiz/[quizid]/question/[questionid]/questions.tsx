@@ -21,13 +21,12 @@ const Questions = ({ quiz, question }: QuestionsPage) => {
 			setIsQuizCompleted(true);
 		}
 
-		selectNextQuestion(questionIndex + 1);
+		displayNextQuestion(questionIndex + 1);
 		setSelectedAnswer(null);
 	}
 
-	const selectNextQuestion = (index: number) => {
-		const question = quiz.questions[index];
-		setCurrentQuestion(question);
+	const displayNextQuestion = (index: number) => {
+		setCurrentQuestion(quiz.questions[index]);
 		setQuestionIndex(index);
 	}
 
@@ -73,7 +72,7 @@ const Questions = ({ quiz, question }: QuestionsPage) => {
 							})}
 						</RadioGroup>
 
-						{selectedAnswer &&
+						{ selectedAnswer &&
 							<>
 								<p className={clsx(
 									{
@@ -83,13 +82,13 @@ const Questions = ({ quiz, question }: QuestionsPage) => {
 									{isCorrectAnswer ? 'Correct' : 'Wrong'} answer! {selectedAnswer}
 								</p>
 
-								{!isCorrectAnswer &&
+								{ !isCorrectAnswer &&
 									<p className="text-blue-500">The correct answer is: {currentQuestion.correctAnswer}</p>
 								}
 							</>
 						}
 
-						{selectedAnswer &&
+						{ selectedAnswer &&
 							<Button className="w-48 mt-5" color="primary" variant="bordered" size="md" onClick={goToNextQuestion}>{questionIndex === 9 ? 'Finish' : 'Next Question'}</Button>
 						}
 					</div>

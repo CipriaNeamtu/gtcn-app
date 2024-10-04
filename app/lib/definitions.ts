@@ -27,12 +27,8 @@ export type CardTypes = {
 	title: string;
 	imgSrc?: string;
 	buttonName?: string;
-	onClick?: () => void;
+	href?: string;
 	children?: React.ReactNode;
-}
-
-export type CategoriesPage = {
-	quizData: Quiz[];
 }
 
 export type QuizPage = {
@@ -47,6 +43,3 @@ export type QuestionsPage = {
 export type ResultsPage = {
 	questions: QuizQuestion[];
 }
-
-
-
