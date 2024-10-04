@@ -2,16 +2,12 @@
 
 import { QuizPage } from "@/app/lib/definitions";
 import { Button } from "@nextui-org/react";
-import { usePathname, useRouter } from "next/navigation";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 
-const Quiz = ({ quiz }: QuizPage) => {
+const StartQuiz = ({ quiz }: QuizPage) => {
 	const pathname = usePathname();
-	const { replace } = useRouter();
-
-	const startQuiz = () => {
-		const questionId = quiz.questions[0].id;
-		replace(`${pathname}/question/${questionId}`);
-	}
+	const questionId = `${pathname}/question/${quiz.questions[0].id}`;
 
 	return (
 		<div className="flex flex-col mt-10 items-center">
@@ -20,9 +16,9 @@ const Quiz = ({ quiz }: QuizPage) => {
 				<span className="font-semibold text-blue-500"> {quiz?.category}</span>!
 			</div>
 
-			<Button className="w-48 mt-5" color="primary" variant="bordered" size="md" onClick={startQuiz}>Start Quiz</Button>
+			<Button as={Link} href={questionId} className="w-48 mt-5" color="primary" variant="bordered" size="md">Start Quiz</Button>
 		</div>
 	)
 }
 
-export default Quiz;
+export default StartQuiz;
