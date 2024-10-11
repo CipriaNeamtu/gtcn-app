@@ -6,7 +6,7 @@ const Home = () => {
 	return (
 		<div className="flex flex-col items-center mt-7">
 			<h1 className="text-3xl">Welcome to CN Quiz!</h1>
-			<div className="max-w-4xl mt-5">
+			<div className="max-w-4xl mt-5 p-10">
 				<p>Ready to challenge your knowledge and have fun at the same time? Choose from a variety of exciting quizzes, test your skills across different 
 				topics! Learn, compete, and enjoy with our interactive quizzes, whether you`re into general knowledge, science, entertainment, or anything else.</p>
 			</div>

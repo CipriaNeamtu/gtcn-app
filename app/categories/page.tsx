@@ -32,7 +32,7 @@ const Page = () => {
 	return (
 		<div className="flex flex-col items-center mt-7">
 			<h1 className="text-3xl">Quiz Categories</h1>
-			<div className="flex max-w-4xl mt-10 gap-20">
+			<div className="flex flex-wrap justify-center max-w-4xl mt-10 gap-20 pb-52 md:flex-nowrap md:pb-0 bg-colorBunker">
 				{quizData?.map((quiz) => {
 					return (
 						<Card 

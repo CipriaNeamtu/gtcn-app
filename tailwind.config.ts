@@ -15,6 +15,7 @@ const config: Config = {
         foreground: "var(--foreground)",
         colorSwamp: "var(--color-swamp)",
         colorDogerBlue: "var(--color-doger-blue)",
+        colorBunker: "var(--color-bunker)",
       },
       spacing: {
         'large-input': '54rem',

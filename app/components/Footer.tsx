@@ -17,7 +17,7 @@ const Footer = () => {
 	];
 
 	return (
-		<div className="flex flex-col items-center justify-center bg-black fixed bottom-0 w-full h-36">
+		<div className="flex flex-col items-center justify-center bg-black fixed bottom-0 w-full h-36 z-10">
 			<div>
 				GTCN-APP
 			</div>

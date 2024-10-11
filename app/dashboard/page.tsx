@@ -110,7 +110,7 @@ const Page = () => {
 	}
 
 	return (
-		<div className="flex flex-col items-center mt-7">
+		<div className="flex flex-col items-center mt-7 p-6 pb-52 sm:mb-0 bg-colorBunker">
 			<h1 className="text-3xl">Add New Questions</h1>
 
 			<form onSubmit={(e) => {

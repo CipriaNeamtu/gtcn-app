@@ -11,7 +11,7 @@ const StartQuiz = ({ quiz }: QuizPage) => {
 
 	return (
 		<div className="flex flex-col mt-10 items-center">
-			<div className="text-xl flex gap-1 justify-center">
+			<div className="text-xl flex flex-wrap gap-1 justify-center p-6">
 				Great, you chose to take the quiz about
 				<span className="font-semibold text-blue-500"> {quiz?.category}</span>!
 			</div>
