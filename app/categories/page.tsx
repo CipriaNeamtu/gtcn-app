@@ -1,5 +1,5 @@
 
-import { getQuizData } from "@/services/fetchData";
+import { getQuizData } from "@/app/services/route";
 import Card from "@/app/components/Card";
 import { Quiz } from "@/app/lib/definitions";
 

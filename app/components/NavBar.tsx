@@ -12,6 +12,7 @@ import { usePathname } from "next/navigation";
 import { PAGE } from "../lib/constants";
 import { FaHome } from "react-icons/fa";
 import { BiSolidCategory } from "react-icons/bi";
+import { AiOutlineDashboard } from "react-icons/ai";
 import Link from "next/link";
 import clsx from "clsx";
 
@@ -20,6 +21,7 @@ export default function NavBar() {
 	const navButtons = [
 		{ name: "Home", pathName: PAGE.HOME, icon: <FaHome /> },
 		{ name: "Categories", pathName: PAGE.CATEGORIES, icon: <BiSolidCategory /> },
+		{ name: "Dashboard", pathName: PAGE.DASHBOARD, icon: <AiOutlineDashboard /> },
 	];
 
 	return (

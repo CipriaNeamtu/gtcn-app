@@ -15,9 +15,11 @@ const Questions = ({ quiz, question }: QuestionsPage) => {
 	const [currentQuestion, setCurrentQuestion] = useState<QuizQuestion>(question);
 	const [questionsResult, setQuestionResult] = useState<QuizQuestion[] | []>([]);
 	const [isQuizCompleted, setIsQuizCompleted] = useState<boolean>(false);
+	const quizQuestionsNumber = quiz.questions.length;
+	const quizTotalPoints = quizQuestionsNumber * 10;
 
 	const goToNextQuestion = () => {
-		if (questionIndex === 9) {
+		if (questionIndex === quizQuestionsNumber - 1) {
 			setIsQuizCompleted(true);
 		}
 
@@ -89,11 +91,11 @@ const Questions = ({ quiz, question }: QuestionsPage) => {
 						}
 
 						{ selectedAnswer &&
-							<Button className="w-48 mt-5" color="primary" variant="bordered" size="md" onClick={goToNextQuestion}>{questionIndex === 9 ? 'Finish' : 'Next Question'}</Button>
+							<Button className="w-48 mt-5" color="primary" variant="bordered" size="md" onClick={goToNextQuestion}>{questionIndex === quizQuestionsNumber - 1 ? 'Finish' : 'Next Question'}</Button>
 						}
 					</div>
 
-					<Card smallTitle={quiz.category} smallDescription="Score Status" title={`Points ${currentScore}/100`}></Card>
+					<Card href="#" smallTitle={`Question ${questionIndex + 1}/${quizQuestionsNumber}`} smallDescription="Score Status" title={`Points ${currentScore}/${quizTotalPoints}`}></Card>
 				</div>
 			}
 

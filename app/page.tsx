@@ -10,8 +10,9 @@ const Home = () => {
 				<p>Ready to challenge your knowledge and have fun at the same time? Choose from a variety of exciting quizzes, test your skills across different 
 				topics! Learn, compete, and enjoy with our interactive quizzes, whether you`re into general knowledge, science, entertainment, or anything else.</p>
 			</div>
-
-			<Button as={Link} href={PAGE.CATEGORIES} className="w-48 mt-5" color="primary" variant="bordered" size="md">Start Now</Button>
+			<Link href={PAGE.CATEGORIES}>
+				<Button className="w-48 mt-5" color="primary" variant="bordered" size="md">Start Now</Button>
+			</Link>
 		</div>
 	);
 }
