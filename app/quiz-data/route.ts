@@ -1,9 +1,21 @@
 'use server'
 
+import { NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import { Quiz, QuizData } from '../lib/definitions';
 
-export const getQuizData = async () => {
+export async function GET() {
+  const data = await getQuizData();
+  return NextResponse.json(data);
+}
+
+export async function POST(request: Request) {
+	const { questionData, categoryId } = await request.json();
+  const data = await updateQuizData(questionData, categoryId);
+  return NextResponse.json(data);
+}
+
+const getQuizData = async () => {
 	try {
 		const file = await fs.readFile(process.cwd() + '/app/api/questions.json', 'utf8');
 		const data = JSON.parse(file);
@@ -14,7 +26,7 @@ export const getQuizData = async () => {
 	}
 }
 
-export const updateQuizData = async (questionData: QuizData, categoryId: string) => {
+const updateQuizData = async (questionData: QuizData, categoryId: string) => {
 	try {
 		const quizData: Quiz[] = await getQuizData();
 		const selectedQuiz: Quiz = quizData.filter(quiz => quiz.id === categoryId)[0];
