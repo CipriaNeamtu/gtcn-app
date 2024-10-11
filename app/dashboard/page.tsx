@@ -75,7 +75,6 @@ const Page = () => {
 			});
 
 			const data = await response.json();
-			console.log('%cCN', `font-weight: 900; background-color: #06856F; color: #FFFFFF; padding: 5px 15px; border-radius: 4px;`, ' ~ addNewQuestion ~ data:', data)
 
 			if (response.ok) {
 				setMessage(data.message);

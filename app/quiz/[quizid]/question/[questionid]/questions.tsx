@@ -95,7 +95,9 @@ const Questions = ({ quiz, question }: QuestionsPage) => {
 						}
 					</div>
 
-					<Card href="#" smallTitle={`Question ${questionIndex + 1}/${quizQuestionsNumber}`} smallDescription="Score Status" title={`Points ${currentScore}/${quizTotalPoints}`}></Card>
+					<div className="h-20">
+						<Card href="#" smallTitle={`Question ${questionIndex + 1}/${quizQuestionsNumber}`} smallDescription="Score Status" title={`Points ${currentScore}/${quizTotalPoints}`}></Card>
+					</div>
 				</div>
 			}
 
