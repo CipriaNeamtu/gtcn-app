@@ -1,10 +1,33 @@
+'use client'
 
-import { getQuizData } from "@/app/services/route";
 import Card from "@/app/components/Card";
 import { Quiz } from "@/app/lib/definitions";
+import { useEffect, useState } from "react";
+import Loading from "../components/Loading";
 
-const Page = async () => {
-	const quizData: Quiz[] = await getQuizData();
+const Page = () => {
+	const [quizData, setQuizData] = useState<Quiz[]>([]);
+	const [loading, setLoading] = useState<boolean>(true);
+
+	const getQuizData = async () => {
+		try {
+				const response = await fetch('/quiz-data');
+				const data = await response.json();
+				setQuizData(data);
+		} catch (error) {
+				console.error('CategoriesPage::getQuizData:', error);
+		} finally {
+				setLoading(false);
+		}
+	};
+
+	useEffect(() => {
+		getQuizData();
+	}, [])
+
+	if (loading) {
+		return <Loading />
+	}
 
 	return (
 		<div className="flex flex-col items-center mt-7">

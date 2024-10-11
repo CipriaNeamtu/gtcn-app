@@ -6,7 +6,7 @@ import { InputType, NewQuestion } from "../lib/definitions";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
 import { generateId } from "../services/utils";
-import { updateQuizData } from "../services/route";
+import Loading from "../components/Loading";
 
 const inputs: InputType[] = [
 	{ defaultValue: 'What is the capital of England?', label: 'Question', placeholder: 'Type the new question', key: 'question', width: 'large-input' },
@@ -20,10 +20,11 @@ const emptyNewQuestion = { question: '', answer1: '', answer2: '', answer3: '', 
 
 const Page = () => {
 	const [newQuestion, setNewQuestion] = useState<NewQuestion>(emptyNewQuestion);
-	const [touchedInputs, setTouchedInputs] = useState<{[key: string]: boolean}>({});
+	const [touchedInputs, setTouchedInputs] = useState<{ [key: string]: boolean }>({});
 	const [isQuestionDataCompleted, setIsQuestionDataCompleted] = useState<boolean>(false);
 	const [message, setMessage] = useState('Select a Quiz Category!');
-	
+	const [loading, setLoading] = useState<boolean>(false);
+
 
 	const formatData = () => {
 		const id = generateId();
@@ -34,7 +35,7 @@ const Page = () => {
 				question: newQuestion.question,
 				correctAnswer: newQuestion.correctAnswer,
 				points: 10,
-				answers: [newQuestion.answer1, newQuestion.answer2, newQuestion.answer3],
+				answers: [ newQuestion.answer1, newQuestion.answer2, newQuestion.answer3 ],
 				id: id
 			}
 		}
@@ -45,7 +46,7 @@ const Page = () => {
 			if (value === '') {
 				return 'This field is required!';
 			}
-	
+
 			if (inputKey === 'question' && value.length < 10) {
 				return 'Please enter at least 10 characters!';
 			}
@@ -62,10 +63,30 @@ const Page = () => {
 
 	const addNewQuestion = async () => {
 		const questionData = formatData();
-		const response = await updateQuizData(questionData, questionData.quiz);
-		console.log('%cCN', `font-weight: 900; background-color: #06856F; color: #FFFFFF; padding: 5px 15px; border-radius: 4px;`, ' ~ addNewQuestion ~ response:', response)
-		setMessage(response.message);
-		resetAll();
+		setLoading(true);
+
+		try {
+			const response = await fetch('/quiz-data', {
+				method: 'POST',
+				headers: {
+					'Content-Type': 'application/json',
+				},
+				body: JSON.stringify({ questionData, categoryId: questionData.quiz }),
+			});
+
+			const data = await response.json();
+			console.log('%cCN', `font-weight: 900; background-color: #06856F; color: #FFFFFF; padding: 5px 15px; border-radius: 4px;`, ' ~ addNewQuestion ~ data:', data)
+
+			if (response.ok) {
+				setMessage(data.message);
+				resetAll();
+			}
+		} catch (error) {
+			console.error('Dashboard::addNewQuestion:', error);
+			setMessage('An error occurred while adding the question.');
+		} finally {
+			setLoading(false);
+		}
 	}
 
 	const resetAll = () => {
@@ -84,7 +105,11 @@ const Page = () => {
 		setIsQuestionDataCompleted(false);
 
 	}, [newQuestion])
-	
+
+	if (loading) {
+		return <Loading />;
+	}
+
 	return (
 		<div className="flex flex-col items-center mt-7">
 			<h1 className="text-3xl">Add New Questions</h1>
@@ -100,9 +125,10 @@ const Page = () => {
 					onValueChange={(value) => {
 						setMessage('*To add a new question, all fields must be filled in!');
 						setNewQuestion(prevQuestion => ({
-						...prevQuestion,
-						quiz: value
-					}))}}
+							...prevQuestion,
+							quiz: value
+						}))
+					}}
 					orientation='horizontal'
 				>
 					{['geography', 'history', 'general'].map((gategory, index) => {
@@ -111,8 +137,8 @@ const Page = () => {
 						)
 					})}
 				</RadioGroup>
-				
-				{ newQuestion.quiz != '' &&
+
+				{newQuestion.quiz != '' &&
 					<>
 						<div className="flex gap-4 flex-wrap max-w-screen-lg mt-6">
 							{
@@ -138,14 +164,14 @@ const Page = () => {
 							}
 						</div>
 
-					{ isQuestionDataCompleted &&
-						<Button className="mt-5" type="submit" color="primary" variant="bordered">Add the question to {newQuestion.quiz} category</Button>
-					}
+						{isQuestionDataCompleted &&
+							<Button className="mt-5" type="submit" color="primary" variant="bordered">Add the question to {newQuestion.quiz} category</Button>
+						}
 						<h1 className="text-md mt-4 text-blue-500">{message}</h1>
-					</> 
+					</>
 				}
 
-				{ !newQuestion.quiz && !isQuestionDataCompleted &&
+				{!newQuestion.quiz && !isQuestionDataCompleted &&
 					<h1 className="text-md mt-4 text-green-500">{message}</h1>
 				}
 			</form>

@@ -372,6 +372,28 @@
           "Spain"
         ],
         "id": "IYKXWDORJSSFX9YC"
+      },
+      {
+        "question": "The result for 1 + 1 is?",
+        "correctAnswer": "2",
+        "points": 10,
+        "answers": [
+          "3",
+          "10",
+          "2"
+        ],
+        "id": "J249USAG2O9ORZG3"
+      },
+      {
+        "question": "Is this a question?",
+        "correctAnswer": "Yes",
+        "points": 10,
+        "answers": [
+          "Yes",
+          "No",
+          "Sure"
+        ],
+        "id": "K18T5NH2GVYLSRGO"
       }
     ]
   }
