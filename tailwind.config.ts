@@ -16,6 +16,9 @@ const config: Config = {
         colorSwamp: "var(--color-swamp)",
         colorDogerBlue: "var(--color-doger-blue)",
       },
+      spacing: {
+        'large-input': '54rem',
+      }
     },
   },
   darkMode: "class",

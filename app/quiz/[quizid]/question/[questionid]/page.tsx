@@ -1,6 +1,6 @@
 import { QuizQuestion, Quiz, ParamsTypes } from "@/app/lib/definitions";
 import Questions from "./questions";
-import { getQuizData } from "@/services/fetchData";
+import { getQuizData } from "@/app/services/route";
 
 const Page = async ({ params }: ParamsTypes) => {
 	const questionId = params?.questionid;

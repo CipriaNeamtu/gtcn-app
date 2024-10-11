@@ -14,8 +14,7 @@ export default function Cards({
  }: CardTypes ) {
 	
 	return (
-		<Link href={href || ''}>
-			<Card className="py-4 bg-gray-700">
+		<Card className="py-4 bg-gray-700">
 				<CardHeader className="pb-0 pt-2 px-4 flex-col items-start">
 					<p className="text-tiny uppercase font-bold">{smallTitle}</p>
 					<small className="text-default-500">{smallDescription}</small>
@@ -35,10 +34,11 @@ export default function Cards({
 					{children}
 
 					{ buttonName &&
-						<Button as={Link} href={href || ''} className="mt-5" color="primary" variant="bordered">{buttonName}</Button>
+						<Link href={href}>
+							<Button className="mt-5 w-full" color="primary" variant="bordered">{buttonName}</Button>
+						</Link>
 					}
 				</CardBody>
 			</Card>
-		</Link>
 	);
 }

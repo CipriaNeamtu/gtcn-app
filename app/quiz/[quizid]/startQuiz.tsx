@@ -15,8 +15,10 @@ const StartQuiz = ({ quiz }: QuizPage) => {
 				Great, you chose to take the quiz about
 				<span className="font-semibold text-blue-500"> {quiz?.category}</span>!
 			</div>
-
-			<Button as={Link} href={questionId} className="w-48 mt-5" color="primary" variant="bordered" size="md">Start Quiz</Button>
+			
+			<Link href={questionId}>
+				<Button className="w-48 mt-5" color="primary" variant="bordered" size="md">Start Quiz</Button>
+			</Link>
 		</div>
 	)
 }
