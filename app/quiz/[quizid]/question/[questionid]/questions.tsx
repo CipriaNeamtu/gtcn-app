@@ -60,7 +60,7 @@ const Questions = ({ quiz, question }: QuestionsPage) => {
 	return (
 		<>
 			{ !isQuizCompleted &&
-				<div className="flex flex-wrap justify-center gap-6 sm:gap-60 mt-10 p-6">
+				<div className="flex flex-wrap justify-center gap-6 sm:gap-60 mt-10 p-6 pb-80 sm:pb-0 bg-colorBunker">
 					<div className="flex flex-col gap-3 items-center">
 						<RadioGroup
 							label={currentQuestion?.question}
