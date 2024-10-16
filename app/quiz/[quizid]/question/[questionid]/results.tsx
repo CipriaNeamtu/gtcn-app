@@ -9,8 +9,12 @@ const Results = ({ questions, category }: ResultsPage) => {
 	const correctAnswers = questions.filter(question => question.points !== 0).length;
 	const wrongAnswers = questions.filter(question => question.points === 0).length;
 	const [name, setName] = useState<string | null>(null);
+	const [error, setError] = useState<string | null>(null);
+	const [successMessage, setSuccessMessage] = useState<string | null>(null);
 
 	const addScore = async () => {
+		validateInput();
+
 		if (!name) {
 			return;
 		}
@@ -23,23 +27,30 @@ const Results = ({ questions, category }: ResultsPage) => {
 		}
 
 		try {
-			await fetch('https://670fc21fa85f4164ef2bcd5d.mockapi.io/api/v1/top', {
+			const response = await fetch('https://670fc21fa85f4164ef2bcd5d.mockapi.io/api/v1/top', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
 				},
 				body: JSON.stringify(user)
 			})
+
+			if (response.ok) {
+				setSuccessMessage('Thank you, your score is in our Top List!');
+			}
+
+			console.log('%cCN', `font-weight: 900; background-color: #06856F; color: #FFFFFF; padding: 5px 15px; border-radius: 4px;`, ' ~ addScore ~ response:', response)
 		} catch (error) {
 				console.error('Results::addScore:', error)
 		}
 	}
 
-	const validateInput = (value: string) => {
-		if (value === '') {
-			return 'Type your name if you want to add your score to our Top List!';
+	const validateInput = () => {
+		if (name === null) {
+			setError('Type your name if you want to add your score to our Top List!');
+			return;
 		} 
-		return true;
+		setError(null);
 	}
 
 	return (
@@ -50,20 +61,28 @@ const Results = ({ questions, category }: ResultsPage) => {
 				<span>In total you answered {questions.length} questions!</span>
 				<span>From this total <span className="text-green-500">{correctAnswers}</span> questions were correct and <span className="text-red-500">{wrongAnswers}</span> were wrong!</span>
 				<span>Congratulations on completing the Quiz!</span>
+				
+				{ !successMessage ?
+					<>
+						<span className="mt-10">Add your score to our top list!</span>
+						<Input
+							className="max-w-52"
+							type="text"
+							color='primary'
+							label='Field Name'
+							placeholder='Type your name here'
+							value={name ?? ''}
+							size='md'
+							onChange={(e) => setName(e.target.value)}
+							onBlur={() => validateInput()}
+						/>
 
-				<span className="mt-10">Add your score to our top list!</span>
-				<Input
-					className="max-w-52"
-					type="text"
-					color='primary'
-					label='Field Name'
-					placeholder='Type your name here'
-					value={name ?? ''}
-					size='md'
-					onChange={(e) => setName(e.target.value)}
-					validate={(value) => validateInput(value)}
-				/>
-				<Button className="w-48 mt-5" color="primary" variant="bordered" size="md" onClick={addScore}>Add My Score</Button>
+						{ error && <span className="text-red-500 mt-4">{error}</span> }
+						<Button className="w-48 mt-5" color="primary" variant="bordered" size="md" onClick={addScore}>Add My Score</Button>
+					</>
+					:
+					<span className="text-green-500 mt-4">{successMessage}</span>
+				}
 			</div>
 
 			<div className="flex gap-4 flex-wrap justify-center">

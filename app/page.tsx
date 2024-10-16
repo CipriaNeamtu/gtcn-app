@@ -7,14 +7,6 @@ import Image from "next/image";
 import QuizImg from "../public/quiz.jpg"
 
 const Home = () => {
-	const getUsers = async () => {
-		const response = await fetch('https://670fc21fa85f4164ef2bcd5d.mockapi.io/api/v1/top');
-		const data = await response.json();
-		console.log('%cCN', `font-weight: 900; background-color: #06856F; color: #FFFFFF; padding: 5px 15px; border-radius: 4px;`, ' ~ getUsers ~ data:', data)
-	}
-
-	
-
 	return (
 		<div className="flex flex-col items-center mt-7 overflow-y-auto pb-52 bg-colorBunker">
 			<h1 className="text-3xl">Welcome to CN Quiz!</h1>
@@ -26,7 +18,6 @@ const Home = () => {
 			<Link href={PAGE.CATEGORIES}>
 				<Button className="w-48 mt-5" color="primary" variant="bordered" size="md">Start Now</Button>
 			</Link>
-				<Button className="w-48 mt-5" color="primary" variant="bordered" size="md" onClick={getUsers}>Get Data</Button>
 		</div>
 	);
 }

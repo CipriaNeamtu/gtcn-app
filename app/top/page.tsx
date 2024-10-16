@@ -1,13 +1,24 @@
+'use client'
+
+import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import { User } from "../lib/definitions";
 
-const Page = async () => {
-	const response = await fetch('https://670fc21fa85f4164ef2bcd5d.mockapi.io/api/v1/top');
-	const users = await response.json();
-	
+const Page = () => {
+	const [users, setUsers] = useState<User[]>([]);
 	const getUserDate = (user: User) => {
 		return new Date(user.createdAt).toLocaleDateString();
 	} 
+
+	useEffect(() => {
+		const getUsers = async () => {
+			const response = await fetch('https://670fc21fa85f4164ef2bcd5d.mockapi.io/api/v1/top');
+			const data = await response.json();
+			setUsers(data)
+		}
+
+		getUsers();
+	},[])
 
 	if (!users) {
 		return <Loading />
