@@ -6,7 +6,6 @@ import { Input } from "@nextui-org/react";
 import { useState } from "react";
 
 const Results = ({ questions, category }: ResultsPage) => {
-	console.log('%cCN', `font-weight: 900; background-color: #06856F; color: #FFFFFF; padding: 5px 15px; border-radius: 4px;`, ' ~ Results ~ questions:', questions)
 	const correctAnswers = questions.filter(question => question.points !== 0).length;
 	const wrongAnswers = questions.filter(question => question.points === 0).length;
 	const [name, setName] = useState<string | null>(null);
