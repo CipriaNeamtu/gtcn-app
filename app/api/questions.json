@@ -396,5 +396,370 @@
         "id": "K18T5NH2GVYLSRGO"
       }
     ]
+  },
+  {
+    "id": "mathematics",
+    "category": "General Math",
+    "image": "/mathematics.jpg",
+    "type": "Quiz",
+    "questions": [
+      {
+        "question": "What is the value of π (pi) to two decimal places?",
+        "correctAnswer": "3.14",
+        "points": 10,
+        "answers": [
+          "3.14",
+          "3.16",
+          "3.12"
+        ],
+        "id": "R2TJH4E5ZDO2VQO9"
+      },
+      {
+        "question": "What is the result of 5 squared?",
+        "correctAnswer": "25",
+        "points": 10,
+        "answers": [
+          "20",
+          "25",
+          "30"
+        ],
+        "id": "SCWVMKQ23LV8YUJZ"
+      },
+      {
+        "question": "What is the formula to calculate the area of a circle?",
+        "correctAnswer": "πr² (pi times radius squared)",
+        "points": 10,
+        "answers": [
+          "2πr (2 times pi times radius)",
+          "πr² (pi times radius squared)",
+          "πd (pi times diameter)"
+        ],
+        "id": "6HDS7A0L2VXK3M4P"
+      },
+      {
+        "question": "What is the sum of angles in a triangle?",
+        "correctAnswer": "180 degrees",
+        "points": 10,
+        "answers": [
+          "90 degrees",
+          "180 degrees",
+          "270 degrees"
+        ],
+        "id": "IUEHPAQ0G51TN8RF"
+      },
+      {
+        "question": "What is the square root of 144?",
+        "correctAnswer": "12",
+        "points": 10,
+        "answers": [
+          "10",
+          "12",
+          "14"
+        ],
+        "id": "XN7LY3MUR2OTVQ0A"
+      },
+      {
+        "question": "In a right-angled triangle, what is the side opposite the right angle called?",
+        "correctAnswer": "Hypotenuse",
+        "points": 10,
+        "answers": [
+          "Adjacent",
+          "Opposite",
+          "Hypotenuse"
+        ],
+        "id": "Y8Z2KAI1N4PJ3BEG"
+      },
+      {
+        "question": "What is the result of 9 ÷ 3?",
+        "correctAnswer": "3",
+        "points": 10,
+        "answers": [
+          "2",
+          "3",
+          "4"
+        ],
+        "id": "JQNTS5EOM3VZ4K8F"
+      },
+      {
+        "question": "What is the formula for the volume of a cube?",
+        "correctAnswer": "s³ (side cubed)",
+        "points": 10,
+        "answers": [
+          "s² (side squared)",
+          "s³ (side cubed)",
+          "2s (2 times side)"
+        ],
+        "id": "U4LS9GH3CVP7BM2R"
+      },
+      {
+        "question": "What is the sum of the first five prime numbers?",
+        "correctAnswer": "28",
+        "points": 10,
+        "answers": [
+          "20",
+          "24",
+          "28"
+        ],
+        "id": "Z1T8PW5EYKQ6LO9J"
+      },
+      {
+        "question": "What is the result of 7 × 8?",
+        "correctAnswer": "56",
+        "points": 10,
+        "answers": [
+          "48",
+          "56",
+          "64"
+        ],
+        "id": "V7SFK9E8AQ2XPN3M"
+      }
+    ]
+  },
+  {
+    "id": "music",
+    "category": "General Music",
+    "image": "/music.jpg",
+    "type": "Quiz",
+    "questions": [
+      {
+        "question": "Who is known as the 'King of Pop'?",
+        "correctAnswer": "Michael Jackson",
+        "points": 10,
+        "answers": [
+          "Elvis Presley",
+          "Michael Jackson",
+          "Prince"
+        ],
+        "id": "X8DSH9ER4T0VLQ3Y"
+      },
+      {
+        "question": "What is the musical term for gradually getting louder?",
+        "correctAnswer": "Crescendo",
+        "points": 10,
+        "answers": [
+          "Crescendo",
+          "Decrescendo",
+          "Fortissimo"
+        ],
+        "id": "T6V5LQA7RHPC8Z9U"
+      },
+      {
+        "question": "Which instrument has 88 keys?",
+        "correctAnswer": "Piano",
+        "points": 10,
+        "answers": [
+          "Piano",
+          "Organ",
+          "Accordion"
+        ],
+        "id": "L3RDW7OSFU0QJYKC"
+      },
+      {
+        "question": "Which musical period did Ludwig van Beethoven belong to?",
+        "correctAnswer": "Classical/Romantic",
+        "points": 10,
+        "answers": [
+          "Baroque",
+          "Classical/Romantic",
+          "Impressionist"
+        ],
+        "id": "RY1UPWZ8CJXFOG7T"
+      },
+      {
+        "question": "What is the term for a group of notes played in a sequence, creating a recognizable tune?",
+        "correctAnswer": "Melody",
+        "points": 10,
+        "answers": [
+          "Harmony",
+          "Melody",
+          "Chord"
+        ],
+        "id": "U9Z6LY2JKNEP8FTX"
+      },
+      {
+        "question": "Which famous composer became deaf later in life?",
+        "correctAnswer": "Ludwig van Beethoven",
+        "points": 10,
+        "answers": [
+          "Johann Sebastian Bach",
+          "Ludwig van Beethoven",
+          "Wolfgang Amadeus Mozart"
+        ],
+        "id": "Q4NT5AK9LW7HODJE"
+      },
+      {
+        "question": "What is the highest female singing voice?",
+        "correctAnswer": "Soprano",
+        "points": 10,
+        "answers": [
+          "Mezzo-soprano",
+          "Soprano",
+          "Alto"
+        ],
+        "id": "VA9EBT0X1NFYO2CP"
+      },
+      {
+        "question": "Which famous British band was also known as 'The Fab Four'?",
+        "correctAnswer": "The Beatles",
+        "points": 10,
+        "answers": [
+          "The Rolling Stones",
+          "The Beatles",
+          "Queen"
+        ],
+        "id": "G7XZOS3HQMIKD9WN"
+      },
+      {
+        "question": "In musical notation, what does 'forte' (f) indicate?",
+        "correctAnswer": "To play loudly",
+        "points": 10,
+        "answers": [
+          "To play softly",
+          "To play loudly",
+          "To play quickly"
+        ],
+        "id": "P3YZM6LOF8UQCX5V"
+      },
+      {
+        "question": "What is the musical symbol for a sharp note?",
+        "correctAnswer": "#",
+        "points": 10,
+        "answers": [
+          "♭",
+          "#",
+          "♮"
+        ],
+        "id": "W8SYD2HQKP1RJOXF"
+      }
+    ]
+  },
+  {
+    "id": "movies",
+    "category": "Movies Quiz",
+    "image": "/movies.jpg",
+    "type": "Quiz",
+    "questions": [
+      {
+        "question": "Who directed the movie 'Inception'?",
+        "correctAnswer": "Christopher Nolan",
+        "points": 10,
+        "answers": [
+          "Quentin Tarantino",
+          "Christopher Nolan",
+          "Steven Spielberg"
+        ],
+        "id": "R9TJ5GE2KLF4NVPQ"
+      },
+      {
+        "question": "Which movie won the Academy Award for Best Picture in 1994?",
+        "correctAnswer": "Forrest Gump",
+        "points": 10,
+        "answers": [
+          "Pulp Fiction",
+          "Forrest Gump",
+          "The Shawshank Redemption"
+        ],
+        "id": "Z3WRUP8OVM4TXQKH"
+      },
+      {
+        "question": "What is the highest-grossing film of all time (as of 2024)?",
+        "correctAnswer": "Avatar",
+        "points": 10,
+        "answers": [
+          "Avengers: Endgame",
+          "Avatar",
+          "Titanic"
+        ],
+        "id": "S7YHBQVX1NOJEP4M"
+      },
+      {
+        "question": "Which actor played Jack Dawson in 'Titanic'?",
+        "correctAnswer": "Leonardo DiCaprio",
+        "points": 10,
+        "answers": [
+          "Brad Pitt",
+          "Leonardo DiCaprio",
+          "Johnny Depp"
+        ],
+        "id": "T6H9LQKPZC2R5MJV"
+      },
+      {
+        "question": "What is the name of the fictional African country in 'Black Panther'?",
+        "correctAnswer": "Wakanda",
+        "points": 10,
+        "answers": [
+          "Genovia",
+          "Wakanda",
+          "Naboo"
+        ],
+        "id": "V2TXOPC3JUNS7AQ9"
+      },
+      {
+        "question": "Who voiced the character Woody in 'Toy Story'?",
+        "correctAnswer": "Tom Hanks",
+        "points": 10,
+        "answers": [
+          "Tom Hanks",
+          "Tim Allen",
+          "Robin Williams"
+        ],
+        "id": "M8F3KYVR9QAZ7HLS"
+      },
+      {
+        "question": "Which movie features the quote 'Here's looking at you, kid'?",
+        "correctAnswer": "Casablanca",
+        "points": 10,
+        "answers": [
+          "Gone with the Wind",
+          "Casablanca",
+          "The Godfather"
+        ],
+        "id": "H5RPOLUY2JFVXWA8"
+      },
+      {
+        "question": "Which superhero team is featured in 'Guardians of the Galaxy'?",
+        "correctAnswer": "The Guardians of the Galaxy",
+        "points": 10,
+        "answers": [
+          "The Avengers",
+          "The Guardians of the Galaxy",
+          "The X-Men"
+        ],
+        "id": "C9ZTUF5KGBLO3QPS"
+      },
+      {
+        "question": "Which movie did Heath Ledger win a posthumous Oscar for?",
+        "correctAnswer": "The Dark Knight",
+        "points": 10,
+        "answers": [
+          "The Dark Knight",
+          "Brokeback Mountain",
+          "A Knight's Tale"
+        ],
+        "id": "Q8ERJK9MXVUPOSZT"
+      },
+      {
+        "question": "Which animated movie features a princess named Elsa?",
+        "correctAnswer": "Frozen",
+        "points": 10,
+        "answers": [
+          "Frozen",
+          "Brave",
+          "Moana"
+        ],
+        "id": "K5NVLSTW8PJQZ6YO"
+      },
+      {
+        "question": "Legolas played in?",
+        "correctAnswer": "Lord of The Rings",
+        "points": 10,
+        "answers": [
+          "Gladiator",
+          "Game of Thrones",
+          "Lord of The Rings"
+        ],
+        "id": "MLQO858WJHOQHGKU"
+      }
+    ]
   }
 ]
