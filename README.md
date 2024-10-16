@@ -1,8 +1,14 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+This is a [Next.js](https://nextjs.org) project which is deployed on this addess: https://gt-cn.netlify.app/
+The code for this project could be find here: https://github.com/CipriaNeamtu/gtcn-app
+
+## Description
+Explore a dynamic web quiz experience that engages users with interactive questions across diverse topics. Our quiz platform blends intuitive design with seamless functionality, allowing participants to test their knowledge while enjoying a smooth, responsive interface. Featuring personalized user profiles, real-time scoring, and detailed performance analytics, our project aims to elevate learning and entertainment. Built on robust technologies like React, Next.js, and TypeScript, it ensures reliability and scalability. Join us in redefining the quiz experience, where learning meets enjoyment seamlessly.
+
 
 ## Getting Started
+Install the node modules and start the server.
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
@@ -16,21 +22,14 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Development
+The project use NextJs Api Routes and NextUI components.
+You could use the imported components or switch them with new ones.
 
-## Learn More
+The main page is located on app/page.tsx.
+The NavBar and Footer components are imported to main page because we need them in all pages.
+Then we have a navigation to the quiz categories, the selected quiz and then to the questions.
+The application allows you to add new questions in any quiz category from the Dashboard page.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Feel free to improve this application in any way.

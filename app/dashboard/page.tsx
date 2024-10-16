@@ -113,10 +113,22 @@ const Page = () => {
 		<div className="flex flex-col items-center mt-7 p-6 pb-52 sm:mb-0 bg-colorBunker">
 			<h1 className="text-3xl">Add New Questions</h1>
 
+			<div className="flex flex-col gap-2 mt-5 max-w-xl">
+				<p>1. To add a new question, you must select a category from those listed below.</p>
+
+				<p>2. Write the question and don`t forget to put the question mark at the end `?`.</p>
+				<p>3. Write the three answer options and the correct answer.</p>
+
+				<div className="text-blue-500">
+					<p>*Attenion! The correct answer must be one of the 3 answer options.</p>
+					<p>If the correct answer is not filled in correctly, you will not be able to add the new question!</p>
+				</div>
+			</div>
+
 			<form onSubmit={(e) => {
 				e.preventDefault();
 				addNewQuestion();
-			}} className="mt-24">
+			}} className="mt-7">
 				<RadioGroup
 					label='Select Category'
 					value={newQuestion.quiz}
@@ -130,7 +142,7 @@ const Page = () => {
 					}}
 					orientation='horizontal'
 				>
-					{['geography', 'history', 'general'].map((gategory, index) => {
+					{['geography', 'history', 'general', 'mathematics', 'music', 'movies'].map((gategory, index) => {
 						return (
 							<Radio key={index} value={gategory}>{gategory}</Radio>
 						)
