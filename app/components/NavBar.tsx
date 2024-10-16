@@ -16,6 +16,7 @@ import { PAGE } from "../lib/constants";
 import { FaHome } from "react-icons/fa";
 import { BiSolidCategory } from "react-icons/bi";
 import { AiOutlineDashboard } from "react-icons/ai";
+import { GiPodiumWinner } from "react-icons/gi";
 import Link from "next/link";
 import clsx from "clsx";
 import { useEffect, useState } from "react";
@@ -24,6 +25,7 @@ const navButtons = [
 	{ name: "Home", pathName: PAGE.HOME, icon: <FaHome /> },
 	{ name: "Categories", pathName: PAGE.CATEGORIES, icon: <BiSolidCategory /> },
 	{ name: "Dashboard", pathName: PAGE.DASHBOARD, icon: <AiOutlineDashboard /> },
+	{ name: "Top List", pathName: PAGE.TOP, icon: <GiPodiumWinner /> },
 ];
 
 export default function NavBar() {
@@ -42,7 +44,7 @@ export default function NavBar() {
 				</NavbarContent>
 
 				<NavbarBrand>
-					<p className="font-bold text-inherit">GTCN-APP</p>
+					<Link href={PAGE.HOME} className="font-bold text-inherit">GTCN-APP</Link>
 				</NavbarBrand>
 
 				<NavbarContent className="hidden sm:flex gap-4" justify="center">

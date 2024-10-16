@@ -42,6 +42,7 @@ export type QuestionsPage = {
 
 export type ResultsPage = {
 	questions: QuizQuestion[];
+	category: string;
 }
 
 export type NewQuestion = {
@@ -65,4 +66,12 @@ export type InputType = {
 export type QuizData = {
 	quiz: string;
 	newQuestion: QuizQuestion; 
+}
+
+export type User = {
+	id: string;
+	name: string;
+	score: number;
+	category: string;
+	createdAt: Date;
 }

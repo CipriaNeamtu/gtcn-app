@@ -3,4 +3,5 @@ export const PAGE = {
 	CATEGORIES: '/categories',
 	DASHBOARD: '/dashboard',
 	RESULTS: '/results',
+	TOP: '/top',
 }

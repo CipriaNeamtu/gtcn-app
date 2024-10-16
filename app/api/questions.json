@@ -635,7 +635,7 @@
   },
   {
     "id": "movies",
-    "category": "Movies Quiz",
+    "category": "Movies",
     "image": "/movies.jpg",
     "type": "Quiz",
     "questions": [
