@@ -5,6 +5,8 @@ import Link from "next/link";
 import { Input } from "@nextui-org/react";
 import { useState } from "react";
 
+const usersApi = process.env.NEXT_PUBLIC_USERS_API_URL;
+
 const Results = ({ questions, category }: ResultsPage) => {
 	const correctAnswers = questions.filter(question => question.points !== 0).length;
 	const wrongAnswers = questions.filter(question => question.points === 0).length;
@@ -27,7 +29,11 @@ const Results = ({ questions, category }: ResultsPage) => {
 		}
 
 		try {
-			const response = await fetch('https://670fc21fa85f4164ef2bcd5d.mockapi.io/api/v1/top', {
+			if (!usersApi) {
+				throw new Error('Users API URL is not defined');
+			}
+
+			const response = await fetch(usersApi, {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',
@@ -39,7 +45,6 @@ const Results = ({ questions, category }: ResultsPage) => {
 				setSuccessMessage('Thank you, your score is in our Top List!');
 			}
 
-			console.log('%cCN', `font-weight: 900; background-color: #06856F; color: #FFFFFF; padding: 5px 15px; border-radius: 4px;`, ' ~ addScore ~ response:', response)
 		} catch (error) {
 				console.error('Results::addScore:', error)
 		}

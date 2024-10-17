@@ -4,23 +4,33 @@ import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import { User } from "../lib/definitions";
 
+const usersApi = process.env.NEXT_PUBLIC_USERS_API_URL;
+
 const Page = () => {
 	const [users, setUsers] = useState<User[]>([]);
 	const getUserDate = (user: User) => {
 		return new Date(user.createdAt).toLocaleDateString();
 	} 
-
+	
 	useEffect(() => {
-		const getUsers = async () => {
-			const response = await fetch('https://670fc21fa85f4164ef2bcd5d.mockapi.io/api/v1/top');
-			const data = await response.json();
-			setUsers(data)
+		if (!usersApi) {
+			throw new Error('Top::getTopListUsers: Users API URL is not defined');
 		}
 
-		getUsers();
+		const getTopListUsers = async () => {
+			try {
+				const response = await fetch(usersApi);
+				const data = await response.json();
+				setUsers(data)
+			} catch (error) {
+					console.error('Top::getTopListUsers:', error);
+			}
+		}
+
+		getTopListUsers();
 	},[])
 
-	if (!users) {
+	if (!users.length) {
 		return <Loading />
 	}
 
