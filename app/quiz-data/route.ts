@@ -4,6 +4,20 @@ import { NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import { Quiz, QuizData } from '../lib/definitions';
 
+import { AppDataSource } from "../data-source";
+import { MyUser } from "../entity/User";
+
+export const createDataBase = async (req) => {
+  const userRepo = AppDataSource.getRepository(MyUser);
+	console.log('userRepo:', userRepo);
+
+  if (req.method === "POST") {
+    const { name, age } = req.body;
+    const user = { name, age };
+    await userRepo.save(user);
+  } 
+}
+
 export async function GET() {
   const data = await getQuizData();
   return NextResponse.json(data);

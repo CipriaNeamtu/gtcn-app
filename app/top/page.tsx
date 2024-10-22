@@ -3,6 +3,8 @@
 import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import { User } from "../lib/definitions";
+import { Button } from "@nextui-org/button";
+import { createDataBase } from '../quiz-data/route';
 
 const usersApi = process.env.NEXT_PUBLIC_USERS_API_URL;
 
@@ -11,6 +13,20 @@ const Page = () => {
 	const getUserDate = (user: User) => {
 		return new Date(user.createdAt).toLocaleDateString();
 	} 
+
+	const handleDataBase = async () => {
+		const request = {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json',
+			},
+			body: { name: 'Ciprian Neamtu', age: 20  }
+		}
+
+		const dataBase = await createDataBase(request);
+		console.log({ dataBase });
+		
+	}
 	
 	useEffect(() => {
 		if (!usersApi) {
@@ -58,6 +74,8 @@ const Page = () => {
 					))}
         </tbody>
       </table>
+
+					<Button color="primary" onClick={handleDataBase}>Create Data Base</Button>
     </div>
   );
 }
