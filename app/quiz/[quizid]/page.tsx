@@ -13,7 +13,7 @@ const Page = ({ params }: ParamsTypes) => {
 
 	const getQuizData = async () => {
 		try {
-				const response = await fetch('/quiz-data');
+				const response = await fetch('/api/quiz-data');
 				const data = await response.json();
 				setQuizData(data);
 		} catch (error) {

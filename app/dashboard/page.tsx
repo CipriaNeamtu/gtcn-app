@@ -66,7 +66,7 @@ const Page = () => {
 		setLoading(true);
 
 		try {
-			const response = await fetch('/quiz-data', {
+			const response = await fetch('/api/quiz-data', {
 				method: 'POST',
 				headers: {
 					'Content-Type': 'application/json',

@@ -1,35 +1,20 @@
-'use client'
-
-import { useEffect, useState } from "react";
 import Loading from "../components/Loading";
 import { User } from "../lib/definitions";
 
-const usersApi = process.env.NEXT_PUBLIC_USERS_API_URL;
+const usersApi = process.env.USERS_API_URL;
 
-const Page = () => {
-	const [users, setUsers] = useState<User[]>([]);
+const Page = async () => {
+	if (!usersApi) {
+		throw new Error('Top::getTopListUsers: Users API URL is not defined');
+	}
+
+	const response = await fetch(`${usersApi}?page=1&limit50`);
+	const users = await response.json();
+		
 	const getUserDate = (user: User) => {
 		return new Date(user.createdAt).toLocaleDateString();
 	} 
-	
-	useEffect(() => {
-		if (!usersApi) {
-			throw new Error('Top::getTopListUsers: Users API URL is not defined');
-		}
-
-		const getTopListUsers = async () => {
-			try {
-				const response = await fetch(usersApi);
-				const data = await response.json();
-				setUsers(data)
-			} catch (error) {
-					console.error('Top::getTopListUsers:', error);
-			}
-		}
-
-		getTopListUsers();
-	},[])
-
+		
 	if (!users.length) {
 		return <Loading />
 	}

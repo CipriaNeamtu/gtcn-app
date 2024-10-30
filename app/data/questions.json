@@ -630,6 +630,17 @@
           "♮"
         ],
         "id": "W8SYD2HQKP1RJOXF"
+      },
+      {
+        "question": "Who wrote Bohemian Rhapsody?",
+        "correctAnswer": "Queen",
+        "points": 10,
+        "answers": [
+          "Metallica",
+          "Queen",
+          "Prince"
+        ],
+        "id": "903S3ZO7T5R6CDT3"
       }
     ]
   },
