@@ -770,6 +770,17 @@
           "Lord of The Rings"
         ],
         "id": "MLQO858WJHOQHGKU"
+      },
+      {
+        "question": "Who is Isildur?",
+        "correctAnswer": "Son of Elendil",
+        "points": 10,
+        "answers": [
+          "Son of John Snow",
+          "Son of Gandalf",
+          "Son of Elendil"
+        ],
+        "id": "2IA3Q7FIWEZFLYR5"
       }
     ]
   }
