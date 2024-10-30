@@ -4,4 +4,5 @@ export const PAGE = {
 	DASHBOARD: '/dashboard',
 	RESULTS: '/results',
 	TOP: '/top',
+	USERS: '/users'
 }

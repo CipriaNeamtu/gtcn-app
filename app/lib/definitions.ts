@@ -1,3 +1,5 @@
+import { ButtonVariantProps } from "@nextui-org/theme";
+
 export type QuizQuestion = {
 	question: string;
 	correctAnswer: string;
@@ -74,4 +76,18 @@ export type User = {
 	score: number;
 	category: string;
 	createdAt: Date;
+}
+
+type ButtonVariant = ButtonVariantProps['variant'];
+type ButtonColor = ButtonVariantProps['color'];
+
+export type ModalTypes = {
+	title: string;
+	buttonColor: ButtonColor; 
+	buttonVariant: ButtonVariant;
+	buttonName: string; 
+	children: React.ReactNode;
+	closeButtonName?: string, 
+	actionButtonName?: string, 
+	onActionButton: () => void;
 }
