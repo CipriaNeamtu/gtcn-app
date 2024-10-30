@@ -2,7 +2,7 @@
 
 import { NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
-import { Quiz, QuizData } from '../lib/definitions';
+import { Quiz, QuizData } from '../../lib/definitions';
 
 export async function GET() {
   const data = await getQuizData();
@@ -17,7 +17,7 @@ export async function POST(request: Request) {
 
 const getQuizData = async () => {
 	try {
-		const file = await fs.readFile(process.cwd() + '/app/api/questions.json', 'utf8');
+		const file = await fs.readFile(process.cwd() + '/app/data/questions.json', 'utf8');
 		const data = JSON.parse(file);
 		return data;
 	} catch (error) {
@@ -33,10 +33,10 @@ const updateQuizData = async (questionData: QuizData, categoryId: string) => {
 
 		selectedQuiz.questions.push(questionData.newQuestion);
 
-		const filePath = process.cwd() + '/app/api/questions.json';
+		const filePath = process.cwd() + '/app/data/questions.json';
 		await fs.writeFile(filePath, JSON.stringify(quizData, null, 2));
 
-		return { message: 'New question saved successfully!', quizData }
+		return { message: 'New question saved successfully!' }
 	} catch (error) {
 		console.error('route::updateQuizData:', error);
 		return { message: 'Failed to save data!' };

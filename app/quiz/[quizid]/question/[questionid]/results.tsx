@@ -5,8 +5,6 @@ import Link from "next/link";
 import { Input } from "@nextui-org/react";
 import { useState } from "react";
 
-const usersApi = process.env.NEXT_PUBLIC_USERS_API_URL;
-
 const Results = ({ questions, category }: ResultsPage) => {
 	const correctAnswers = questions.filter(question => question.points !== 0).length;
 	const wrongAnswers = questions.filter(question => question.points === 0).length;
@@ -28,25 +26,14 @@ const Results = ({ questions, category }: ResultsPage) => {
 			category: category
 		}
 
-		try {
-			if (!usersApi) {
-				throw new Error('Users API URL is not defined');
-			}
+		const response = await fetch('/api/send-results', {
+			method: 'POST',
+			headers: { 'Content-Type': 'application/json' },
+			body: JSON.stringify(user)
+		});
 
-			const response = await fetch(usersApi, {
-				method: 'POST',
-				headers: {
-					'Content-Type': 'application/json',
-				},
-				body: JSON.stringify(user)
-			})
-
-			if (response.ok) {
-				setSuccessMessage('Thank you, your score is in our Top List!');
-			}
-
-		} catch (error) {
-				console.error('Results::addScore:', error)
+		if (response.ok) {
+			setSuccessMessage('Thank you, your score is in our Top List!')
 		}
 	}
 
